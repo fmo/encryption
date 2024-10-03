@@ -21,6 +21,12 @@ Alice wants to prove that she sent this message. Alice uses her Private Key to E
 * Bob knows Alice must have sent the message (AUTHENTICATION)
 * Bob knows message was not modified in transit (INTEGRITY)
 
+## Shortcoming of Asymmetric Key pairs
+
+Can't use for Bulk Data, but can use it for Limited Data.
+
+Bulk Data should be protected with Symmetric Encryption. What if we used Asymmetric Keys to share Symmetric Keys? (SSL and TLS based on this)
+
 # AES-256 
 AES-256 encryption is a method that scrambles data using a 256-bit key
 
