@@ -14,10 +14,12 @@ Alice wants to send a secure message to Bob. Bob gives Alice his public key. Ali
 
 Another Usage is for message SIGNATURES
 
+Video: https://www.youtube.com/watch?v=_zyKvPvh808
+
 Alice wants to prove that she sent this message. Alice uses her Private Key to Encrypt the message. Alice gives her Public Key to Bob. If Bob can decrypt with Alice's Public key:
 
-* Bob knows Alice must have sent the message
-* Bob knows message was not modified in transit
+* Bob knows Alice must have sent the message (AUTHENTICATION)
+* Bob knows message was not modified in transit (INTEGRITY)
 
 # AES-256 
 AES-256 encryption is a method that scrambles data using a 256-bit key
