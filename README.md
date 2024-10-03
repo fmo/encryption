@@ -1,6 +1,17 @@
 # Encryption
 All about encryption
 
+# Asymmetric Key Pair
+
+How It Works:
+
+Public Key (encryption): You can give this key to anyone. They can use it to encrypt a message, but they cannot decrypt it.
+
+Private Key (decryption): This key is kept secret by you. You use it to decrypt messages that were encrypted with your public key.
+
+Example Use Case:
+Alice wants to send a secure message to Bob. Bob gives Alice his public key. Alice encrypts her message with Bob's public key, and only Bob can decrypt it with his private key.
+
 # AES-256 
 AES-256 encryption is a method that scrambles data using a 256-bit key
 
