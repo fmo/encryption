@@ -12,7 +12,8 @@ Private Key (decryption): This key is kept secret by you. You use it to decrypt 
 Example Use Case:
 Alice wants to send a secure message to Bob. Bob gives Alice his public key. Alice encrypts her message with Bob's public key, and only Bob can decrypt it with his private key.
 
-Another Usage is for SIGNATURES
+Another Usage is for message SIGNATURES
+
 Alice wants to prove that she sent this message. Alice uses her Private Key to Encrypt the message. Alice gives her Public Key to Bob. If Bob can decrypt with Alice's Public key:
 
 * Bob knows Alice must have sent the message
