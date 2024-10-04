@@ -28,6 +28,29 @@ Can't use for Bulk Data, but can use it for Limited Data.
 Bulk Data should be protected with Symmetric Encryption. But thats not super secure. 
 What if we used Asymmetric Keys to share Symmetric Keys? (SSL and TLS based on this)
 
+* Pam randomly generates a Symmetric Secret key
+* Pam encrypts Symmetric Key with Jim's Public key
+* Jim decrypts Symmetric Key with Jim's Private Key
+* Bulk Data can now be Symmetrically Encrypted
+* Both parties has identical Symmetric key, so they can share the encrypted data.
+
+This concept of using both Asymmetric and Symmetric Encryption means Hybrid Encryption.
+
+* Asymmetric Encryption to facilitate a Key Exchange
+* Secret Key used with Symmetric Encryption for Bulk Data
+
+Asymmetric Encryption
+
+* Weakness: Slower - Reqquires much larger key sizes
+* Weakness: Cipher text expansion
+* Strength: More Secure - Private Key is never shared.
+
+Symmetric Encryption
+
+* Strength: Faster - Lower CPU Cost
+* Strength: Cipher text is same size as Plain Text
+* Weaknes: Less Secure - Secret key must be shared
+
 # AES-256 
 AES-256 encryption is a method that scrambles data using a 256-bit key
 
