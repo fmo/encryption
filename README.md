@@ -1,6 +1,10 @@
 # Encryption
 All about encryption
 
+General TLS info 
+
+https://www.youtube.com/watch?v=EnY6fSng3Ew
+
 # Asymmetric Key Pair
 
 How It Works:
