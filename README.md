@@ -1,9 +1,18 @@
-# Encryption
-All about encryption
+# General TLS info
 
-General TLS info 
+Laith Academy general 40 mins video
 
 https://www.youtube.com/watch?v=EnY6fSng3Ew
+
+# Self Signed Certificates
+
+Jay LaCroix Video
+
+https://www.youtube.com/watch?v=Qg5ghpiEHm0
+
+```
+openssl req -new -newkey rsa:4096 -x509 -days 365 -nodes -out MyCertificate.crt -keyout MyKey.key
+```
 
 # Asymmetric Key Pair
 
