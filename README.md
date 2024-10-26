@@ -90,7 +90,9 @@ When you use -salt, OpenSSL generates a random value (salt) and incorporates it 
 Without a salt, if you encrypt the same data with the same password multiple times, you would get identical encrypted output, which is less secure.
 </p>
 
-# Create private key and self-signed certificate
+# Certificate generation
+
+## Create private key and self-signed certificate
 
 ```
 openssl req -x509 \
