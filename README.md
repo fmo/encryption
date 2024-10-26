@@ -108,3 +108,15 @@ Validate
 ```
 openssl x509 -in ca-cert.pem -noout -text
 ```
+
+Certificate Signing Request
+
+```
+openssl req \
+-newkey rsa:4096 \
+-keyout server-key.pem \
+-out server-req.pem \
+-subj "/C=TR/ST=EURASIA/L=ISTANBUL/O=Microservices/OU=PaymentService/CN=*.microservices.dev/emailAddress=test@test.com" \
+-nodes \
+-sha256
+```
