@@ -171,7 +171,7 @@ openssl x509 \
 -CA ca-cert.pem \
 -CAkey ca-key.pem \
 -CAcreateserial \
--out client.crt \
+-out client-cert.pem \
 -extfile client-ext.cnf
 ```
 
