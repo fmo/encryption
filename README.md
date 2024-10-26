@@ -142,3 +142,9 @@ server-ext.cnf
 ```
 subjectAltName=DNS:*.microservices.dev,DNS:*.microsercices.dev,IP:0.0.0.0
 ```
+
+Validate
+
+```
+openssl x509 -in server-cert.pem -noout -text
+```
