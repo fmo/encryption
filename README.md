@@ -122,3 +122,23 @@ openssl req \
 -nodes \
 -sha256
 ```
+
+Use CA's private key to sign the request
+
+```
+openssl x509 \
+-req -in server-req.pem \
+-days 60 \
+-CA ca-cert.pem \
+-CAkey ca-key.pem \
+-CAcreateserial \
+-out server-cert.pem \
+-extfile server-ext.cnf \
+-sha256
+```
+
+server-ext.cnf
+
+```
+subjectAltName=DNS:*.microservices.dev,DNS:*.microsercices.dev,IP:0.0.0.0
+```
