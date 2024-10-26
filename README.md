@@ -148,3 +148,15 @@ Validate
 ```
 openssl x509 -in server-cert.pem -noout -text
 ```
+
+For mTLS communication, need to generate a certificate signing request for the client side, following generates a private key and this self-signed certificate
+
+```
+openssl req \
+-newkey rsa:4096 \
+-keyout client-key.pem \
+-out client-req.pem \
+-subj "/C=TR/ST=EURASIA/L=Istanbul/O=Microsercices/OU=OrderService/CN=*.microservices.dev/emailAddress=test@test.com" \
+-nodes \
+-sha256
+```
