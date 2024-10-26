@@ -160,3 +160,23 @@ openssl req \
 -nodes \
 -sha256
 ```
+
+Signing the certificate with CA'S private key
+
+```
+openssl x509 \
+-req -in client-req.pem \
+-sha256 \
+-days 60 \
+-CA ca-cert.pem \
+-CAkey ca-key.pem \
+-CAcreateserial \
+-out client.crt \
+-extfile client-ext.cnf
+```
+
+Verify
+
+```
+openssl x509 -in client-cert.pem -noout -text
+```
