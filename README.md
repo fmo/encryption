@@ -96,13 +96,13 @@ Without a salt, if you encrypt the same data with the same password multiple tim
 
 ```
 openssl req -x509 \
--sha256 \
--newkey rsa:4096 \
--days 365 \
--keyout ca-key.pem \
--out ca-cert.pem \
--subj "/C=TR/ST=EURASIA/L=ISTANBUL/O=Software/OU=Microservices/CN=*.microservices.dev/emailAddress=test@test.com" \
--nodes
+    -sha256 \
+    -newkey rsa:4096 \
+    -days 365 \
+    -keyout ca-key.pem \
+    -out ca-cert.pem \
+    -subj "/C=TR/ST=EURASIA/L=ISTANBUL/O=Software/OU=Microservices/CN=*.microservices.dev/emailAddress=test@test.com" \
+    -nodes
 ```
 
 Validate
@@ -115,26 +115,26 @@ Certificate Signing Request
 
 ```
 openssl req \
--newkey rsa:4096 \
--keyout server-key.pem \
--out server-req.pem \
--subj "/C=TR/ST=EURASIA/L=ISTANBUL/O=Microservices/OU=PaymentService/CN=*.microservices.dev/emailAddress=test@test.com" \
--nodes \
--sha256
+    -newkey rsa:4096 \
+    -keyout server-key.pem \
+    -out server-req.pem \
+    -subj "/C=TR/ST=EURASIA/L=ISTANBUL/O=Microservices/OU=PaymentService/CN=*.microservices.dev/emailAddress=test@test.com" \
+    -nodes \
+    -sha256
 ```
 
 Use CA's private key to sign the request
 
 ```
 openssl x509 \
--req -in server-req.pem \
--days 60 \
--CA ca-cert.pem \
--CAkey ca-key.pem \
--CAcreateserial \
--out server-cert.pem \
--extfile server-ext.cnf \
--sha256
+    -req -in server-req.pem \
+    -days 60 \
+    -CA ca-cert.pem \
+    -CAkey ca-key.pem \
+    -CAcreateserial \
+    -out server-cert.pem \
+    -extfile server-ext.cnf \
+    -sha256
 ```
 
 server-ext.cnf
@@ -153,26 +153,26 @@ For mTLS communication, need to generate a certificate signing request for the c
 
 ```
 openssl req \
--newkey rsa:4096 \
--keyout client-key.pem \
--out client-req.pem \
--subj "/C=TR/ST=EURASIA/L=Istanbul/O=Microsercices/OU=OrderService/CN=*.microservices.dev/emailAddress=test@test.com" \
--nodes \
--sha256
+    -newkey rsa:4096 \
+    -keyout client-key.pem \
+    -out client-req.pem \
+    -subj "/C=TR/ST=EURASIA/L=Istanbul/O=Microsercices/OU=OrderService/CN=*.microservices.dev/emailAddress=test@test.com" \
+    -nodes \
+    -sha256
 ```
 
 Signing the certificate with CA'S private key
 
 ```
 openssl x509 \
--req -in client-req.pem \
--sha256 \
--days 60 \
--CA ca-cert.pem \
--CAkey ca-key.pem \
--CAcreateserial \
--out client-cert.pem \
--extfile client-ext.cnf
+    -req -in client-req.pem \
+    -sha256 \
+    -days 60 \
+    -CA ca-cert.pem \
+    -CAkey ca-key.pem \
+    -CAcreateserial \
+    -out client-cert.pem \
+    -extfile client-ext.cnf
 ```
 
 Verify
