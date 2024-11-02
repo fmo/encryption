@@ -44,7 +44,7 @@ func main() {
 	var opts []grpc.DialOption
 
 	opts = append(opts, grpc.WithTransportCredentials(tlsCredentials))
-	conn, err := grpc.Dial("localhost:8080", opts...)
+	conn, err := grpc.Dial("localhost:8083", opts...)
 	if err != nil {
 		log.Fatalf("Failed to connect order service. Err: %v", err)
 	}
@@ -53,10 +53,10 @@ func main() {
 
 	orderClient := order.NewOrderServiceClient(conn)
 	log.Println("Creating order...")
-	orderResponse, errCreate := orderClient.Create(context.Background(), &order.CreateOrderREquest{
-		UserId:       -1,
-		ProductionId: 0,
-		Price:        2,
+	orderResponse, errCreate := orderClient.Create(context.Background(), &order.CreateOrderRequest{
+		UserId:    -1,
+		ProductId: 0,
+		Price:     2,
 	})
 
 	if errCreate != nil {

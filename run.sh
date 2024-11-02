@@ -23,7 +23,7 @@ openssl req -x509 \
   -nodes
 
 echo "Generate private key and certificate signing request for server"
-openssql req \
+openssl req \
   -sha256 \
   -newkey rsa:4096 \
   -keyout server.key \
@@ -32,7 +32,7 @@ openssql req \
   -nodes
 
 echo "Sign certificate signing for server by using private key of CA"
-rm server-ext.cnf || true && echo "subjectAltName=DNS:*microservices.dev,DNS:*.microservices.dev,IP:0.0.0.0" >> server.ext.cnf
+rm server-ext.cnf || true && echo "subjectAltName=DNS:*microservices.dev,DNS:*.microservices.dev,IP:0.0.0.0" >> server-ext.cnf
 openssl x509 \
   -req -in server-req.pem \
   -sha256 \
